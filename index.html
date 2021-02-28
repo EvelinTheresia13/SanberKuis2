@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script type = "text/javascript" src = "js/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Kuis 2</title>
+</head>
+<body>
+    <div id = "databinding">
+        <input type = "text" v-on:keyup.enter = "showinputvalue" v-bind:style = "styleobj" placeholder = " "/> 
+        <button v-on:click = "buttonclicked">add</button>
+        <h3>Muhamamd Iqbal Mubarok <button v-on:click = "buttonclicked">edit</button> <button v-on:click = "buttonclicked">delete</button></h3>
+        <h3>Ruby Purwanti <button v-on:click = "buttonclicked">edit</button> <button v-on:click = "buttonclicked">delete</button></h3>
+        <h3>Faqih Muhamamad <button v-on:click = "buttonclicked">edit</button> <button v-on:click = "buttonclicked">delete</button></h3>
+      
+     </div>
+     <script type = "text/javascript">
+        var vm = new Vue({
+           el: '#databinding',
+           data: {
+              name:'',
+              styleobj: {
+                 width: "30%",
+                 padding: "12px 20px",
+                 margin: "8px 0",
+                 boxSizing: "border-box"
+              }
+           },
+           methods : {
+                buttonclicked : function(event) {
+                  console.log(event);
+                  return this.name;
+               }
+           }
+        });
+     </script>
+</body>
+</html>
